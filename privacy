@@ -1,0 +1,432 @@
+privacy_html = r'''<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Sleepy — Privacy Policy</title>
+<meta name="description" content="Sleepy Privacy Policy. Zero data collection, zero tracking, zero analytics. Your sleep data stays on your device.">
+<meta property="og:title" content="Sleepy — Privacy Policy">
+<meta property="og:description" content="Sleepy Privacy Policy. Zero data collection, zero tracking. Your sleep data stays on your device.">
+<meta property="og:image" content="icon.png">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Sleepy — Privacy Policy">
+<meta name="twitter:description" content="Sleepy Privacy Policy. Zero data collection, zero tracking.">
+<meta name="twitter:image" content="icon.png">
+<meta name="theme-color" content="#0A0A1F">
+<link rel="icon" type="image/png" sizes="192x192" href="icon.png">
+<link rel="apple-touch-icon" href="icon.png">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:80px}
+body{
+  font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","SF Pro Text",Helvetica,Arial,sans-serif;
+  background:linear-gradient(160deg,#0A0A1F 0%,#171138 35%,#221748 65%,#0A0A1F 100%);
+  color:rgba(255,255,255,.70);
+  min-height:100vh;overflow-x:hidden;
+  -webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;
+}
+/* ── Background effects ── */
+.bg-stars{position:fixed;inset:0;pointer-events:none;z-index:0}
+.bg-stars::before,.bg-stars::after{content:'';position:absolute;width:1px;height:1px;border-radius:50%}
+.bg-stars::before{
+  box-shadow:
+    42px 67px 0 .5px rgba(255,255,255,.35),137px 34px 0 .4px rgba(255,255,255,.25),
+    290px 120px 0 .5px rgba(255,255,255,.30),450px 55px 0 .3px rgba(255,255,255,.20),
+    580px 180px 0 .5px rgba(255,255,255,.35),720px 42px 0 .4px rgba(255,255,255,.25),
+    95px 220px 0 .3px rgba(255,255,255,.20),340px 280px 0 .5px rgba(255,255,255,.30),
+    510px 310px 0 .4px rgba(255,255,255,.22),810px 130px 0 .3px rgba(255,255,255,.28),
+    920px 80px 0 .5px rgba(255,255,255,.32),1050px 190px 0 .4px rgba(255,255,255,.20),
+    1180px 60px 0 .3px rgba(255,255,255,.25),200px 400px 0 .5px rgba(255,255,255,.18),
+    670px 350px 0 .4px rgba(255,255,255,.22),1300px 250px 0 .3px rgba(255,255,255,.28),
+    160px 150px 0 .5px rgba(255,255,255,.33),490px 90px 0 .4px rgba(255,255,255,.20),
+    830px 270px 0 .3px rgba(255,255,255,.25),1100px 340px 0 .5px rgba(255,255,255,.15);
+}
+.bg-stars::after{
+  box-shadow:
+    78px 500px 0 .4px rgba(255,255,255,.18),260px 530px 0 .3px rgba(255,255,255,.15),
+    440px 470px 0 .5px rgba(255,255,255,.20),620px 550px 0 .4px rgba(255,255,255,.12),
+    780px 490px 0 .3px rgba(255,255,255,.18),950px 520px 0 .5px rgba(255,255,255,.14),
+    1120px 480px 0 .4px rgba(255,255,255,.16),350px 620px 0 .3px rgba(255,255,255,.12),
+    560px 660px 0 .5px rgba(255,255,255,.10),880px 640px 0 .4px rgba(255,255,255,.13);
+}
+.breathing-halo{
+  position:fixed;top:40%;left:50%;width:600px;height:600px;
+  background:radial-gradient(circle,rgba(79,70,229,.07) 0%,transparent 70%);
+  border-radius:50%;pointer-events:none;z-index:0;
+  animation:breathe 20s ease-in-out infinite;
+}
+@keyframes breathe{
+  0%,100%{opacity:.35;transform:translate(-50%,-50%) scale(1)}
+  50%{opacity:.65;transform:translate(-50%,-50%) scale(1.12)}
+}
+.glow-orange{
+  position:fixed;bottom:-15%;right:-10%;width:55%;height:55%;
+  background:radial-gradient(circle,rgba(245,158,11,.07) 0%,transparent 70%);
+  pointer-events:none;z-index:0;
+}
+/* ── Skip link ── */
+.skip-link{
+  position:absolute;top:-60px;left:12px;padding:8px 16px;background:#4F46E5;
+  color:#fff;border-radius:8px;font-size:.875rem;font-weight:600;
+  text-decoration:none;z-index:200;transition:top .2s ease;
+}
+.skip-link:focus{top:12px}
+/* ── Nav ── */
+.nav{
+  position:fixed;top:0;left:0;right:0;z-index:100;height:64px;
+  background:rgba(10,10,31,.45);
+  backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);
+  border-bottom:1px solid rgba(255,255,255,.06);
+  transition:background .3s ease,border-color .3s ease;
+}
+.nav.scrolled{background:rgba(10,10,31,.88);border-bottom-color:rgba(255,255,255,.10)}
+.nav-inner{max-width:1200px;margin:0 auto;height:100%;display:flex;align-items:center;justify-content:space-between;padding:0 24px}
+.nav-brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:#fff}
+.nav-icon{width:40px;height:40px;border-radius:9px}
+.nav-wordmark{font-size:1.125rem;font-weight:700;letter-spacing:-.01em}
+.nav-right{display:flex;align-items:center;gap:20px}
+.lang-switcher{display:flex;background:rgba(255,255,255,.08);border-radius:8px;padding:2px}
+.lang-btn{
+  padding:5px 12px;border:none;background:transparent;color:rgba(255,255,255,.45);
+  font-size:.8125rem;font-weight:600;font-family:inherit;border-radius:6px;
+  cursor:pointer;transition:background .2s ease,color .2s ease;line-height:1;
+}
+.lang-btn:hover{color:rgba(255,255,255,.7)}
+.lang-btn.active{background:rgba(255,255,255,.15);color:#fff}
+.nav-link{color:rgba(255,255,255,.55);text-decoration:none;font-size:.875rem;font-weight:500;transition:color .2s ease}
+.nav-link:hover{color:#fff}
+.nav-cta{
+  display:inline-block;background:#4F46E5;color:#fff;padding:8px 18px;
+  border-radius:10px;font-size:.875rem;font-weight:600;text-decoration:none;
+  transition:transform .2s ease,box-shadow .2s ease;
+  box-shadow:0 0 20px rgba(79,70,229,.25);
+}
+.nav-cta:hover{transform:scale(1.03);box-shadow:0 0 30px rgba(79,70,229,.45)}
+/* ── Policy content ── */
+.policy-header{
+  position:relative;z-index:1;text-align:center;
+  padding:140px 24px 60px;
+}
+.policy-header h1{
+  font-size:clamp(2rem,5vw,3rem);font-weight:700;color:#fff;
+  letter-spacing:-.025em;line-height:1.1;
+}
+.policy-header .policy-subtitle{
+  font-size:1rem;color:rgba(255,255,255,.45);margin-top:12px;font-weight:400;
+}
+.policy-body{
+  position:relative;z-index:1;max-width:70ch;margin:0 auto;
+  padding:0 24px 100px;
+}
+.policy-section{margin-bottom:56px}
+.policy-section h2{
+  font-size:1.375rem;font-weight:650;color:#fff;margin-bottom:14px;
+  letter-spacing:-.01em;line-height:1.3;
+}
+.policy-section p{
+  font-size:.9375rem;color:rgba(255,255,255,.65);line-height:1.75;
+}
+.policy-section p+p{margin-top:12px}
+.policy-section a{color:#7C7AFF;text-decoration:underline;text-underline-offset:2px;transition:color .2s ease}
+.policy-section a:hover{color:#fff}
+/* ── Footer ── */
+.footer{
+  position:relative;z-index:1;display:flex;justify-content:space-between;
+  align-items:center;flex-wrap:wrap;gap:12px;padding:28px 24px;
+  border-top:1px solid rgba(255,255,255,.06);max-width:1200px;margin:0 auto;
+  font-size:.8125rem;color:rgba(255,255,255,.40);
+}
+.footer a{color:rgba(255,255,255,.50);text-decoration:none;transition:color .2s ease}
+.footer a:hover{color:#fff}
+/* ── Animations ── */
+.fade-in{opacity:0;transform:translateY(28px);transition:opacity .7s ease-out,transform .7s ease-out}
+.fade-in.visible{opacity:1;transform:translateY(0)}
+/* ── Focus ── */
+:focus-visible{outline:2px solid #4F46E5;outline-offset:2px}
+/* ── Responsive ── */
+@media(max-width:480px){
+  .nav-link{display:none}
+  .nav-cta{padding:7px 14px;font-size:.8125rem}
+  .nav-right{gap:12px}
+  .footer{flex-direction:column;text-align:center}
+}
+/* ── Print ── */
+@media print{
+  body{background:#fff!important;color:#111!important}
+  .bg-stars,.breathing-halo,.glow-orange,.nav{display:none!important}
+  .policy-header{padding-top:20px}
+  .policy-header h1{color:#111!important}
+  .policy-header .policy-subtitle{color:#555!important}
+  .policy-section h2{color:#111!important}
+  .policy-section p{color:#333!important}
+  .policy-section a{color:#4F46E5!important}
+  .footer{border-top-color:#ccc!important;color:#666!important}
+  .footer a{color:#333!important}
+}
+</style>
+</head>
+<body>
+<a href="#main" class="skip-link" data-i18n="nav.skip">Skip to content</a>
+<div class="bg-stars" aria-hidden="true"></div>
+<div class="breathing-halo" aria-hidden="true"></div>
+<div class="glow-orange" aria-hidden="true"></div>
+
+<nav class="nav" role="navigation" aria-label="Main navigation">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-brand" aria-label="Sleepy home">
+      <img src="icon.png" alt="" width="40" height="40" class="nav-icon">
+      <span class="nav-wordmark">Sleepy</span>
+    </a>
+    <div class="nav-right">
+      <div class="lang-switcher" role="radiogroup" aria-label="Language">
+        <button type="button" class="lang-btn active" data-lang="en" role="radio" aria-checked="true">EN</button>
+        <button type="button" class="lang-btn" data-lang="fr" role="radio" aria-checked="false">FR</button>
+      </div>
+      <a href="index.html" class="nav-link" data-i18n="nav.home">Home</a>
+      <a href="#app-store-link" class="nav-cta" data-i18n="nav.cta">Get the app</a>
+    </div>
+  </div>
+</nav>
+
+<main id="main">
+  <header class="policy-header fade-in">
+    <h1 data-i18n="pp.title">Privacy Policy</h1>
+    <p class="policy-subtitle" data-i18n="pp.subtitle">Last updated: April 2026</p>
+  </header>
+
+  <div class="policy-body">
+    <!-- 1. In short -->
+    <section class="policy-section fade-in">
+      <h2 data-i18n="pp.s1.title">In short</h2>
+      <p data-i18n="pp.s1.body">Sleepy stores all your sleep data locally on your iPhone. Nothing is transmitted, no account is required, and no analytics or tracking is used. You are always in control of your data.</p>
+    </section>
+
+    <!-- 2. Data we collect -->
+    <section class="policy-section fade-in">
+      <h2 data-i18n="pp.s2.title">Data we collect</h2>
+      <p data-i18n="pp.s2.body">None. We do not collect, transmit, or have access to any personal information. Everything you record in the app &mdash; bedtimes, wake times, notes, mood, fatigue ratings &mdash; is stored locally on your device using Apple&rsquo;s SwiftData framework.</p>
+    </section>
+
+    <!-- 3. Accounts and login -->
+    <section class="policy-section fade-in">
+      <h2 data-i18n="pp.s3.title">Accounts and login</h2>
+      <p data-i18n="pp.s3.body">Sleepy does not require an account. There is no sign-up, no login, and no personal information collected. The app works entirely offline.</p>
+    </section>
+
+    <!-- 4. Apple Health (optional) -->
+    <section class="policy-section fade-in">
+      <h2 data-i18n="pp.s4.title">Apple Health (optional)</h2>
+      <p data-i18n="pp.s4.body">If you enable Apple Health integration, Sleepy writes each completed sleep session to the Health app on your device. This data is managed by Apple&rsquo;s Health framework and remains on your device and iCloud (if you have Health sync enabled in your Apple ID). Sleepy never reads or transmits this data elsewhere. You can revoke this permission anytime in iOS Settings &gt; Health &gt; Data Access &amp; Devices &gt; Sleepy.</p>
+    </section>
+
+    <!-- 5. Notifications -->
+    <section class="policy-section fade-in">
+      <h2 data-i18n="pp.s5.title">Notifications</h2>
+      <p data-i18n="pp.s5.body">Notifications (bedtime reminders, wake reminders, wind-down reminders, weekly summary) are scheduled locally by iOS using Apple&rsquo;s UserNotifications framework. They are triggered entirely on your device based on the schedule you configure and never leave your phone.</p>
+    </section>
+
+    <!-- 6. Live Activities -->
+    <section class="policy-section fade-in">
+      <h2 data-i18n="pp.s6.title">Live Activities</h2>
+      <p data-i18n="pp.s6.body">If enabled, Live Activities display your current sleep session on the Lock Screen and Dynamic Island. They run locally on your device and are not transmitted anywhere.</p>
+    </section>
+
+    <!-- 7. Third-party services -->
+    <section class="policy-section fade-in">
+      <h2 data-i18n="pp.s7.title">Third-party services</h2>
+      <p data-i18n="pp.s7.body">Sleepy does not use any third-party analytics, crash reporting, advertising, or tracking SDK. The only external services used are first-party Apple frameworks (HealthKit, UserNotifications, ActivityKit), each of which requires your explicit permission and is governed by Apple&rsquo;s own privacy policy.</p>
+    </section>
+
+    <!-- 8. Data retention and deletion -->
+    <section class="policy-section fade-in">
+      <h2 data-i18n="pp.s8.title">Data retention and deletion</h2>
+      <p data-i18n="pp.s8.body">Your sleep sessions are stored on your device until you delete them. You can delete individual nights from the Journal at any time (swipe or use the delete button in the night detail screen). Deleting the app from your iPhone permanently removes all locally-stored sleep data. Data written to Apple Health remains in your Health app and must be deleted separately from there.</p>
+    </section>
+
+    <!-- 9. Children's privacy -->
+    <section class="policy-section fade-in">
+      <h2 data-i18n="pp.s9.title">Children&rsquo;s privacy</h2>
+      <p data-i18n="pp.s9.body">Sleepy is rated 4+ and does not knowingly target or collect data from children. Since no data is collected at all, no age-based restrictions apply to data processing.</p>
+    </section>
+
+    <!-- 10. Your rights -->
+    <section class="policy-section fade-in">
+      <h2 data-i18n="pp.s10.title">Your rights</h2>
+      <p data-i18n="pp.s10.body">Because we do not collect or process your personal data, most data-protection rights (access, correction, deletion, portability under GDPR) are fulfilled directly by you on your device. You can export all your data at any time from Settings &gt; Your data &gt; Export as CSV or JSON.</p>
+    </section>
+
+    <!-- 11. Licensing -->
+    <section class="policy-section fade-in">
+      <h2 data-i18n="pp.s11.title">Licensing</h2>
+      <p data-i18n="pp.s11.body">Use of Sleepy is governed by the <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/" target="_blank" rel="noopener">Apple Standard End User License Agreement (EULA)</a>. Limitations of liability and warranties are as defined in that EULA.</p>
+    </section>
+
+    <!-- 12. Contact -->
+    <section class="policy-section fade-in">
+      <h2 data-i18n="pp.s12.title">Contact</h2>
+      <p data-i18n="pp.s12.body">For any question about this policy or the app, please contact: <a href="mailto:martin.lecue@icloud.com">martin.lecue@icloud.com</a></p>
+      <p data-i18n="pp.s12.body2">If you are located in the EU and have concerns about how your data is handled, you also have the right to file a complaint with your national data protection authority (e.g. <a href="https://www.cnil.fr" target="_blank" rel="noopener">CNIL</a> in France).</p>
+    </section>
+
+    <!-- 13. Changes to this policy -->
+    <section class="policy-section fade-in">
+      <h2 data-i18n="pp.s13.title">Changes to this policy</h2>
+      <p data-i18n="pp.s13.body">If this policy ever changes, the updated version will be available here and in the app. Significant changes will be announced in the app&rsquo;s release notes on the App Store.</p>
+    </section>
+
+    <!-- 14. Effective -->
+    <section class="policy-section fade-in">
+      <p style="font-weight:600;color:rgba(255,255,255,.50)" data-i18n="pp.effective">Effective: April 2026</p>
+    </section>
+  </div>
+</main>
+
+<!-- ── Footer ── -->
+<footer class="footer">
+  <span data-i18n="footer.copy">&copy; 2026 Martin Lecue. Made with care.</span>
+  <a href="index.html" data-i18n="footer.home">Home</a>
+  <a href="mailto:martin.lecue@icloud.com">martin.lecue@icloud.com</a>
+</footer>
+
+<script>
+/* ── Translations ── */
+var TRANSLATIONS={
+en:{
+  "nav.skip":"Skip to content",
+  "nav.home":"Home",
+  "nav.cta":"Get the app",
+  "pp.title":"Privacy Policy",
+  "pp.subtitle":"Last updated: April 2026",
+  "pp.s1.title":"In short",
+  "pp.s1.body":"Sleepy stores all your sleep data locally on your iPhone. Nothing is transmitted, no account is required, and no analytics or tracking is used. You are always in control of your data.",
+  "pp.s2.title":"Data we collect",
+  "pp.s2.body":"None. We do not collect, transmit, or have access to any personal information. Everything you record in the app \u2014 bedtimes, wake times, notes, mood, fatigue ratings \u2014 is stored locally on your device using Apple\u2019s SwiftData framework.",
+  "pp.s3.title":"Accounts and login",
+  "pp.s3.body":"Sleepy does not require an account. There is no sign-up, no login, and no personal information collected. The app works entirely offline.",
+  "pp.s4.title":"Apple Health (optional)",
+  "pp.s4.body":"If you enable Apple Health integration, Sleepy writes each completed sleep session to the Health app on your device. This data is managed by Apple\u2019s Health framework and remains on your device and iCloud (if you have Health sync enabled in your Apple ID). Sleepy never reads or transmits this data elsewhere. You can revoke this permission anytime in iOS Settings > Health > Data Access & Devices > Sleepy.",
+  "pp.s5.title":"Notifications",
+  "pp.s5.body":"Notifications (bedtime reminders, wake reminders, wind-down reminders, weekly summary) are scheduled locally by iOS using Apple\u2019s UserNotifications framework. They are triggered entirely on your device based on the schedule you configure and never leave your phone.",
+  "pp.s6.title":"Live Activities",
+  "pp.s6.body":"If enabled, Live Activities display your current sleep session on the Lock Screen and Dynamic Island. They run locally on your device and are not transmitted anywhere.",
+  "pp.s7.title":"Third-party services",
+  "pp.s7.body":"Sleepy does not use any third-party analytics, crash reporting, advertising, or tracking SDK. The only external services used are first-party Apple frameworks (HealthKit, UserNotifications, ActivityKit), each of which requires your explicit permission and is governed by Apple\u2019s own privacy policy.",
+  "pp.s8.title":"Data retention and deletion",
+  "pp.s8.body":"Your sleep sessions are stored on your device until you delete them. You can delete individual nights from the Journal at any time (swipe or use the delete button in the night detail screen). Deleting the app from your iPhone permanently removes all locally-stored sleep data. Data written to Apple Health remains in your Health app and must be deleted separately from there.",
+  "pp.s9.title":"Children\u2019s privacy",
+  "pp.s9.body":"Sleepy is rated 4+ and does not knowingly target or collect data from children. Since no data is collected at all, no age-based restrictions apply to data processing.",
+  "pp.s10.title":"Your rights",
+  "pp.s10.body":"Because we do not collect or process your personal data, most data-protection rights (access, correction, deletion, portability under GDPR) are fulfilled directly by you on your device. You can export all your data at any time from Settings > Your data > Export as CSV or JSON.",
+  "pp.s11.title":"Licensing",
+  "pp.s11.body":"Use of Sleepy is governed by the <a href=\"https://www.apple.com/legal/internet-services/itunes/dev/stdeula/\" target=\"_blank\" rel=\"noopener\">Apple Standard End User License Agreement (EULA)</a>. Limitations of liability and warranties are as defined in that EULA.",
+  "pp.s12.title":"Contact",
+  "pp.s12.body":"For any question about this policy or the app, please contact: <a href=\"mailto:martin.lecue@icloud.com\">martin.lecue@icloud.com</a>",
+  "pp.s12.body2":"If you are located in the EU and have concerns about how your data is handled, you also have the right to file a complaint with your national data protection authority (e.g. <a href=\"https://www.cnil.fr\" target=\"_blank\" rel=\"noopener\">CNIL</a> in France).",
+  "pp.s13.title":"Changes to this policy",
+  "pp.s13.body":"If this policy ever changes, the updated version will be available here and in the app. Significant changes will be announced in the app\u2019s release notes on the App Store.",
+  "pp.effective":"Effective: April 2026",
+  "footer.copy":"\u00a9 2026 Martin Lecue. Made with care.",
+  "footer.home":"Home"
+},
+fr:{
+  "nav.skip":"Aller au contenu",
+  "nav.home":"Accueil",
+  "nav.cta":"T\u00e9l\u00e9charger",
+  "pp.title":"Politique de confidentialit\u00e9",
+  "pp.subtitle":"Derni\u00e8re mise \u00e0 jour\u00a0: avril 2026",
+  "pp.s1.title":"En bref",
+  "pp.s1.body":"Sleepy stocke toutes vos donn\u00e9es de sommeil localement sur votre iPhone. Rien n\u2019est transmis, aucun compte n\u2019est requis et aucun suivi ou analyse n\u2019est utilis\u00e9. Vous gardez toujours le contr\u00f4le de vos donn\u00e9es.",
+  "pp.s2.title":"Donn\u00e9es collect\u00e9es",
+  "pp.s2.body":"Aucune. Nous ne collectons, ne transmettons et n\u2019avons acc\u00e8s \u00e0 aucune information personnelle. Tout ce que vous enregistrez dans l\u2019app \u2014 heures de coucher, heures de r\u00e9veil, notes, humeur, niveaux de fatigue \u2014 est stock\u00e9 localement sur votre appareil via le framework SwiftData d\u2019Apple.",
+  "pp.s3.title":"Comptes et connexion",
+  "pp.s3.body":"Sleepy ne n\u00e9cessite aucun compte. Il n\u2019y a pas d\u2019inscription, pas de connexion et aucune information personnelle collect\u00e9e. L\u2019app fonctionne enti\u00e8rement hors ligne.",
+  "pp.s4.title":"Apple Sant\u00e9 (optionnel)",
+  "pp.s4.body":"Si vous activez l\u2019int\u00e9gration Apple Sant\u00e9, Sleepy \u00e9crit chaque session de sommeil termin\u00e9e dans l\u2019app Sant\u00e9 de votre appareil. Ces donn\u00e9es sont g\u00e9r\u00e9es par le framework Sant\u00e9 d\u2019Apple et restent sur votre appareil et iCloud (si la synchronisation Sant\u00e9 est activ\u00e9e dans votre identifiant Apple). Sleepy ne lit ni ne transmet ces donn\u00e9es ailleurs. Vous pouvez r\u00e9voquer cette autorisation \u00e0 tout moment dans R\u00e9glages iOS > Sant\u00e9 > Acc\u00e8s aux donn\u00e9es et appareils > Sleepy.",
+  "pp.s5.title":"Notifications",
+  "pp.s5.body":"Les notifications (rappels de coucher, de r\u00e9veil, de d\u00e9tente, r\u00e9sum\u00e9 hebdomadaire) sont planifi\u00e9es localement par iOS via le framework UserNotifications d\u2019Apple. Elles sont d\u00e9clench\u00e9es enti\u00e8rement sur votre appareil selon le programme que vous configurez et ne quittent jamais votre t\u00e9l\u00e9phone.",
+  "pp.s6.title":"Activit\u00e9s en direct",
+  "pp.s6.body":"Si activ\u00e9es, les Activit\u00e9s en direct affichent votre session de sommeil en cours sur l\u2019\u00e9cran de verrouillage et la Dynamic Island. Elles fonctionnent localement sur votre appareil et ne sont transmises nulle part.",
+  "pp.s7.title":"Services tiers",
+  "pp.s7.body":"Sleepy n\u2019utilise aucun SDK tiers d\u2019analyse, de rapport de plantage, de publicit\u00e9 ou de suivi. Les seuls services externes utilis\u00e9s sont des frameworks Apple de premi\u00e8re partie (HealthKit, UserNotifications, ActivityKit), chacun n\u00e9cessitant votre autorisation explicite et \u00e9tant r\u00e9gi par la politique de confidentialit\u00e9 d\u2019Apple.",
+  "pp.s8.title":"Conservation et suppression des donn\u00e9es",
+  "pp.s8.body":"Vos sessions de sommeil sont stock\u00e9es sur votre appareil jusqu\u2019\u00e0 ce que vous les supprimiez. Vous pouvez supprimer des nuits individuelles depuis le Journal \u00e0 tout moment (glisser ou utiliser le bouton de suppression dans l\u2019\u00e9cran de d\u00e9tail). La suppression de l\u2019app de votre iPhone supprime d\u00e9finitivement toutes les donn\u00e9es de sommeil locales. Les donn\u00e9es \u00e9crites dans Apple Sant\u00e9 restent dans votre app Sant\u00e9 et doivent \u00eatre supprim\u00e9es s\u00e9par\u00e9ment.",
+  "pp.s9.title":"Confidentialit\u00e9 des enfants",
+  "pp.s9.body":"Sleepy est class\u00e9 4+ et ne cible ni ne collecte sciemment de donn\u00e9es aupr\u00e8s d\u2019enfants. \u00c9tant donn\u00e9 qu\u2019aucune donn\u00e9e n\u2019est collect\u00e9e, aucune restriction li\u00e9e \u00e0 l\u2019\u00e2ge ne s\u2019applique au traitement des donn\u00e9es.",
+  "pp.s10.title":"Vos droits",
+  "pp.s10.body":"Puisque nous ne collectons ni ne traitons vos donn\u00e9es personnelles, la plupart des droits de protection des donn\u00e9es (acc\u00e8s, correction, suppression, portabilit\u00e9 au titre du RGPD) sont exerc\u00e9s directement par vous sur votre appareil. Vous pouvez exporter toutes vos donn\u00e9es \u00e0 tout moment depuis R\u00e9glages > Vos donn\u00e9es > Exporter en CSV ou JSON.",
+  "pp.s11.title":"Licence",
+  "pp.s11.body":"L\u2019utilisation de Sleepy est r\u00e9gie par le <a href=\"https://www.apple.com/legal/internet-services/itunes/dev/stdeula/\" target=\"_blank\" rel=\"noopener\">Contrat de Licence Utilisateur Final (EULA) standard d\u2019Apple</a>. Les limitations de responsabilit\u00e9 et garanties sont telles que d\u00e9finies dans cet EULA.",
+  "pp.s12.title":"Contact",
+  "pp.s12.body":"Pour toute question concernant cette politique ou l\u2019application, veuillez contacter\u00a0: <a href=\"mailto:martin.lecue@icloud.com\">martin.lecue@icloud.com</a>",
+  "pp.s12.body2":"Si vous \u00eates situ\u00e9 dans l\u2019UE et avez des pr\u00e9occupations concernant le traitement de vos donn\u00e9es, vous avez \u00e9galement le droit de d\u00e9poser une plainte aupr\u00e8s de votre autorit\u00e9 nationale de protection des donn\u00e9es (par exemple la <a href=\"https://www.cnil.fr\" target=\"_blank\" rel=\"noopener\">CNIL</a> en France).",
+  "pp.s13.title":"Modifications de cette politique",
+  "pp.s13.body":"Si cette politique est modifi\u00e9e, la version mise \u00e0 jour sera disponible ici et dans l\u2019app. Les changements importants seront annonc\u00e9s dans les notes de mise \u00e0 jour de l\u2019app sur l\u2019App Store.",
+  "pp.effective":"En vigueur\u00a0: avril 2026",
+  "footer.copy":"\u00a9 2026 Martin Lecue. Fait avec soin.",
+  "footer.home":"Accueil"
+}
+};
+
+/* ── Language engine ── */
+(function(){
+  function detectLang(){
+    var stored=localStorage.getItem("sleepy-lang");
+    if(stored==="en"||stored==="fr") return stored;
+    var nav=(navigator.language||navigator.userLanguage||"en").toLowerCase();
+    return nav.startsWith("fr")?"fr":"en";
+  }
+  function applyLang(lang){
+    localStorage.setItem("sleepy-lang",lang);
+    document.documentElement.lang=lang;
+    var t=TRANSLATIONS[lang];
+    document.querySelectorAll("[data-i18n]").forEach(function(el){
+      var key=el.getAttribute("data-i18n");
+      if(t[key]!=null) el.innerHTML=t[key];
+    });
+    document.querySelectorAll(".lang-btn").forEach(function(btn){
+      var active=btn.getAttribute("data-lang")===lang;
+      btn.classList.toggle("active",active);
+      btn.setAttribute("aria-checked",active?"true":"false");
+    });
+    if(lang==="fr"){
+      document.title="Sleepy \u2014 Politique de confidentialit\u00e9";
+      var d=document.querySelector('meta[name="description"]');if(d)d.content="Politique de confidentialit\u00e9 de Sleepy. Z\u00e9ro collecte de donn\u00e9es, z\u00e9ro tracking. Vos donn\u00e9es restent sur votre appareil.";
+    }else{
+      document.title="Sleepy \u2014 Privacy Policy";
+      var d=document.querySelector('meta[name="description"]');if(d)d.content="Sleepy Privacy Policy. Zero data collection, zero tracking, zero analytics. Your sleep data stays on your device.";
+    }
+  }
+  document.querySelectorAll(".lang-btn").forEach(function(btn){
+    btn.addEventListener("click",function(){applyLang(btn.getAttribute("data-lang"))});
+  });
+  applyLang(detectLang());
+
+  /* ── Nav scroll effect ── */
+  var nav=document.querySelector(".nav");
+  var scrolled=false;
+  window.addEventListener("scroll",function(){
+    var s=window.scrollY>32;
+    if(s!==scrolled){scrolled=s;nav.classList.toggle("scrolled",s)}
+  },{passive:true});
+
+  /* ── Intersection observer fade-in ── */
+  if("IntersectionObserver" in window){
+    var io=new IntersectionObserver(function(entries){
+      entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add("visible");io.unobserve(e.target)}});
+    },{threshold:0.12});
+    document.querySelectorAll(".fade-in").forEach(function(el){io.observe(el)});
+  }else{
+    document.querySelectorAll(".fade-in").forEach(function(el){el.classList.add("visible")});
+  }
+})();
+</script>
+</body>
+</html>'''
+
+with open("/tmp/privacy.html", "w", encoding="utf-8") as f:
+    f.write(privacy_html)
+
+print("privacy.html written:", len(privacy_html), "bytes")
+print("\nBoth files ready for download.")
+
